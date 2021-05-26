@@ -10,17 +10,20 @@ class C:
 	def gr6(self): s = hostsearch.S(self.z); return s.gr_hos()
 	def gr7(self): w = whois.W(self.z); return w.gr_who()
 	def gr8(self): z = zonetransfer.Z(self.z); return z.gr_zon()
+    def gr9(self): m = malware.M(self.z); return z.gr_vir()
+
+
 
 if __name__ == '__main__':
 
-	from scripts import email
-	from scripts import fuzz
+	#from scripts import email
+	#from scripts import fuzz
 	from scripts import header
 	from scripts import ip
 	from scripts import link
 	from scripts import malware
-	from scripts import ssl
-	from scripts import waf
+	#from scripts import ssl
+	#from scripts import waf
 	from scripts import reverselookup
 	from scripts import reversedns
 	from scripts import hostsearch
