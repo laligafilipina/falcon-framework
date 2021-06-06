@@ -1,17 +1,20 @@
 import requests
-#import logging
+import termcolor
 
 class I:
 
-	def __init__(self, td):
-		self.z = td
-		#logging.basicConfig(filename='app.log', filemode='a', format='%(asctime)s - %(levelname)s %(message)s', encoding='utf-8', level=logging.DEBUG)
+    def __init__(self, td):
+        self.z = td
 
-	def gr_geo(self):
-		r = requests.get('https://api.hackertarget.com/geoip/?q=%s' % (self.z))
-		if r.status_code == 200:
-			#logging.info('[+] geographic data server request successfully\n%s' % (r.text))
-			return '\n\033[1;32m[+] geographic data server request successfully\033[0m\n\n%s' % (r.text)
-		else:
-			#logging.warning('[-] geographic data server request successfully')
-			return '\n[-] geographic data server request successfully'
+    def gr_geo(self):
+        r = requests.get('https://api.hackertarget.com/geoip/?q=%s' % (self.z))
+        if r.status_code == 200:
+            m = "Geoip location  information are found..."
+            f = "Geoip location  information request failed..."
+            b = termcolor.colored(m, color='yellow', attrs=['bold'])
+            c = termcolor.colored(r.text, color='blue', attrs=['bold'])
+            d = termcolor.colored(f, color='red', attrs=['bold'])
+            print('\u257E'*20,'\n',b,'\n',c,'\n')
+
+        else:
+             print('\u257E'*20,'\n','d','\n')

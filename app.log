@@ -1,0 +1,37 @@
+
+[1;32m[+] header data requested successfully[0m
+
+HTTP/1.1 301 Moved Permanently
+Date: Sun, 06 Jun 2021 05:28:22 GMT
+Server: Apache/2.4.25 (Debian)
+Location: https://unrealsecurity.net/
+Content-Length: 319
+Connection: close
+Content-Type: text/html; charset=iso-8859-1
+
+HTTP/1.1 200 OK
+Date: Sun, 06 Jun 2021 05:28:23 GMT
+Server: Apache/2.4.25 (Debian)
+Set-Cookie: PHPSESSID=r7dtqm5219uk1i7fa9lb7mf7l2; path=/
+Expires: Thu, 19 Nov 1981 08:52:00 GMT
+Cache-Control: no-store, no-cache, must-revalidate
+Pragma: no-cache
+Vary: Accept-Encoding
+Content-Encoding: gzip
+Content-Length: 655
+Connection: close
+Content-Type: text/html; charset=UTF-8
+
+
+[1;32m[+] link data scraped successfully[0m
+
+
+
+[1;32m[+] geographic data server request successfully[0m
+
+IP Address: 185.62.188.118
+Country: Netherlands
+State: 
+City: 
+Latitude: 52.3824
+Longitude: 4.8995

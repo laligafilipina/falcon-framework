@@ -1,16 +1,15 @@
 class C:
 
-    def __init__(self, td): self.z = td;
-    def gr0(self): h = header.H(self.z); return h.gr()
-    def gr1(self): l = link.L(self.z); return l.gr()
-    def gr2(self): i = ip.I(self.z); return i.gr_geo()
-    def gr3(self): r = reverselookup.R(self.z); return r.gr_rev()
-    def gr4(self): n = nmap.N(self.z); return n.gr_nma()
-    def gr5(self): v = reversedns.V(self.z); return v.gr_rev()
-    def gr6(self): s = hostsearch.S(self.z); return s.gr_hos()
-    def gr7(self): w = whois.W(self.z); return w.gr_who()
-    def gr8(self): z = zonetransfer.Z(self.z); return z.gr_zon()
-    def gr9(self): m = malware.M(self.z); return z.gr_vir()
+    def gr0(x): h = header.H(x); return h.gr()
+    def gr1(x): l = link.L(x); return l.gr()
+    def gr2(x): i = ip.I(x); return i.gr_geo()
+    def gr3(x): r = reverselookup.R(x); return r.gr_rev()
+    def gr4(x): n = nmap.N(x); return n.gr_nma()
+    def gr5(x): v = reversedns.V(x); return v.gr_rev()
+    def gr6(x): s = hostsearch.S(x); return s.gr_hos()
+    def gr7(x): w = whois.W(x); return w.gr_who()
+    def gr8(x): z = zonetransfer.Z(x); return z.gr_zon()
+    def gr9(x): m = malware.M(x); return m.gr_vir()
 
 
 
@@ -30,23 +29,33 @@ if __name__ == '__main__':
     from scripts import nmap
     from scripts import whois
     from scripts import zonetransfer
+    import argparse
 
     try:
-        #color:#B2F47D
-        x = str(input('target domain: '))
-        i = C(x)
+        parse = argparse.ArgumentParser()
+        parse.add_argument('-hr','--header', help='collecting header request informations')
+        parse.add_argument('-lk','--link', help='scraping links within the webpage')
+        parse.add_argument('-i','--ip', help='getting geolocation informations')
+        parse.add_argument('-rp','--reverselookup', help='getting reverse lookup informations')
+        parse.add_argument('-np','--nmap', help='collecting nmap port scan result')
+        parse.add_argument('-rs','--reversedns', help='getting reverse dns informations')
+        parse.add_argument('-hs','--hostsearch', help='Checking for some host name search results')
+        parse.add_argument('-w','--whois', help='whois informations lookup result')
+        parse.add_argument('-z','--zonetransfer', help='getting zonetransfer information results')
+        parser = parse.parse_args()
 
         try:
-            print(i.gr0()) 
-            print(i.gr1())
-            print(i.gr2())
-            print(i.gr3())
-            print(i.gr4())
-            print(i.gr5())
-            print(i.gr6())
-            print(i.gr7())
-            print(i.gr8())
-            print(i.gr9())
+            #C.gr0(x) 
+            #C.gr1(x)
+            #C.gr2(x)
+            #C.gr3(x)
+            #C.gr4(x)
+            #C.gr5(x)
+            #C.gr6(x)
+            #C.gr7(x)
+            #C.gr8(x)
+            #C.gr9(x)
+            pass
         except ConnectionError: print("\n\033[1;31m[!] server block temporary (too much request!)\033[0m\n\n") 
 
     except KeyboardInterrupt:
