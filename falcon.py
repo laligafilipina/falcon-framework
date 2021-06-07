@@ -42,20 +42,21 @@ if __name__ == '__main__':
         parse.add_argument('-hs','--hostsearch', help='Checking for some host name search results')
         parse.add_argument('-w','--whois', help='whois informations lookup result')
         parse.add_argument('-z','--zonetransfer', help='getting zonetransfer information results')
-        parser = parse.parse_args()
+        parse.add_argument('-m', '--malware', help='malware scanning the specified domain target')
+        args = parse.parse_args()
 
         try:
-            #C.gr0(x) 
-            #C.gr1(x)
-            #C.gr2(x)
-            #C.gr3(x)
-            #C.gr4(x)
-            #C.gr5(x)
-            #C.gr6(x)
-            #C.gr7(x)
-            #C.gr8(x)
-            #C.gr9(x)
-            pass
+            if args.header: C.gr0(args.header)
+            if args.link: C.gr1(args.link)
+            if args.ip: C.gr2(args.ip)
+            if args.reverselookup: C.gr3(args.reverselookup)
+            if args.nmap: C.gr4(args.nmap)
+            if args.reversedns: C.gr5(args.reversedns)
+            if args.hostsearch: C.gr6(args.hostsearch)
+            if args.whois: C.gr7(args.whois)
+            if args.zonetransfer: C.gr8(args.zonetransfer)
+            if args.malware: C.gr9(args.malware)
+
         except ConnectionError: print("\n\033[1;31m[!] server block temporary (too much request!)\033[0m\n\n") 
 
     except KeyboardInterrupt:
