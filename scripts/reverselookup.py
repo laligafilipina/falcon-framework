@@ -7,9 +7,9 @@ class R:
     def __init__(self, td):
         self.z = td
 
-    def gr_rev(self)
+    def gr_rev(self):
         logging.basicConfig(filename='./logs/app.log', filemode='a', format='%(asctime)s - %(levelname)s - %(message)s', level=logging.INFO)
-        logging.basicConfig(filename='./logs/app.log', filemode='a', format='%(asctime)s - %(levelname)s - %(message)s', level=logging.WARNING):
+        logging.basicConfig(filename='./logs/app.log', filemode='a', format='%(asctime)s - %(levelname)s - %(message)s', level=logging.WARNING)
         r = requests.get('https://api.hackertarget.com/reverseiplookup/?q=%s' % (self.z))
         if r.status_code == 200:
             bnr = "Incoming Results from API Server"

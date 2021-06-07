@@ -10,12 +10,12 @@ class C:
     def gr7(x): w = whois.W(x); return w.gr_who()
     def gr8(x): z = zonetransfer.Z(x); return z.gr_zon()
     def gr9(x): m = malware.M(x); return m.gr_vir()
-
+    def gr10(x): e = email.E(x); return e.se()
 
 
 if __name__ == '__main__':
 
-    #from scripts import email
+    from scripts import email
     #from scripts import fuzz
     from scripts import header
     from scripts import ip
@@ -42,7 +42,8 @@ if __name__ == '__main__':
         parse.add_argument('-hs','--hostsearch', help='Checking for some host name search results')
         parse.add_argument('-w','--whois', help='whois informations lookup result')
         parse.add_argument('-z','--zonetransfer', help='getting zonetransfer information results')
-        parse.add_argument('-m', '--malware', help='malware scanning the specified domain target')
+        parse.add_argument('-m','--malware', help='malware scanning the specified domain target')
+        parse.add_argument('-e','--email', help='email spoofing service targeting')
         args = parse.parse_args()
 
         try:
@@ -56,6 +57,7 @@ if __name__ == '__main__':
             if args.whois: C.gr7(args.whois)
             if args.zonetransfer: C.gr8(args.zonetransfer)
             if args.malware: C.gr9(args.malware)
+            if args.email: C.gr10(args.email)
 
         except ConnectionError: print("\n\033[1;31m[!] server block temporary (too much request!)\033[0m\n\n") 
 
